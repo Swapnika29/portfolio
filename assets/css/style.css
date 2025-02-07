@@ -389,7 +389,7 @@ h3{
 .timeline-item {
     display: flex;
     align-items: center;
-    width: 45%;
+    width: 52%;
     padding: 20px;
     position: relative;
     opacity: 0;
@@ -405,7 +405,7 @@ h3{
 }
 
 .timeline-item.right {
-    left: 55%;
+    left: 50%;
 }
 
 /* Small round images */
