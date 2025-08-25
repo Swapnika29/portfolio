@@ -785,4 +785,20 @@ footer{
     }
 }
 
+/* Contact: single-column layout */
+#contact .row.contact-single{
+  justify-content: center;
+}
+#contact .row.contact-single .col{
+  width: 100%;
+  max-width: 720px;    /* prevents it from getting too wide on desktop */
+}
+#contact .contact-info a{
+  color: var(--color-white);        /* keeps links white inside purple card */
+  text-decoration: underline;       /* optional: show it's clickable */
+}
+#contact .contact-info a:hover{
+  text-decoration: none;
+}
+
 
