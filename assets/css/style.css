@@ -800,5 +800,22 @@ footer{
 #contact .contact-info a:hover{
   text-decoration: none;
 }
+#contact .row.contact-single{
+  justify-content: center;        /* center the flex item (the .col) */
+}
+
+#contact .row.contact-single .col{
+  width: 100%;
+  max-width: 720px;               /* cap width on desktop */
+  display: flex;
+  justify-content: center;        /* center the card inside the column */
+}
+
+#contact .contact-info{
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;                 /* extra safety: center via margins */
+}
+
 
 
