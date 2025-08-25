@@ -59,6 +59,11 @@ html{
     border-radius: 10px;
     cursor: pointer;
     transition: .4s;
+    /* add ↓ */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;   /* remove underline on <a> */
+    color: inherit;          /* inherit text color like a button */
 }
 .btn>i{
     margin-left: 10px;
@@ -66,6 +71,15 @@ html{
 .btn:hover{
     background: var(--second-color);
     color: var(--color-white);
+}
+/* Keep link-buttons consistent */
+.btn:visited { 
+    color: currentColor;      /* safer than 'inherit' if you recolor .btn elsewhere */
+    text-decoration: none; 
+}
+.btn:focus-visible { 
+    outline: 3px solid var(--first-color); 
+    outline-offset: 2px; 
 }
 
 /* ----- GLOBAL ICONS DESIGN ----- */
@@ -326,7 +340,7 @@ h3{
     font-size: 15px;
     color: #777;
 }
-.about-btn button{
+.about-btn .btn{
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -334,7 +348,7 @@ h3{
     color: var(--color-white);
     border-radius: 30px;
 }
-.about-btn button:hover{
+.about-btn .btn:hover{
     background: var(--first-color-hover);
 }
 
@@ -767,3 +781,4 @@ footer{
         width: 100%;
     }
 }
+
