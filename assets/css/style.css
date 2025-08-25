@@ -108,6 +108,7 @@ nav{
     padding-inline: 9vw;
     transition: .3s;
     z-index: 100;
+    align-items: center; 
 }
 .nav-logo{
    position: relative;
@@ -145,6 +146,8 @@ nav{
     font-size: 28px;
     cursor: pointer;
 }
+.nav-button{ display:flex; align-items:center; }  /* NEW */
+.nav-button .btn{ line-height: 1; }
 .active-link{
     position: relative;
     color: var(--first-color);
@@ -781,4 +784,5 @@ footer{
         width: 100%;
     }
 }
+
 
