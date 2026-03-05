@@ -58,9 +58,11 @@ sr.reveal('.featured-image',{delay: 300})
 
 /* -- PROJECT BOX -- */
 sr.reveal('.project-box',{interval: 200})
+sr.reveal('.project-card',{interval: 150})
 
 /* -- HEADINGS -- */
 sr.reveal('.top-header',{})
+sr.reveal('.skills-title',{})
 
 /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
 
@@ -73,6 +75,7 @@ reset: true
 })
 
 srLeft.reveal('.about-info',{delay: 100})
+srLeft.reveal('.about-monisha',{delay: 100})
 srLeft.reveal('.contact-info',{delay: 100})
 
 
@@ -85,6 +88,7 @@ reset: true
 })
 
 srRight.reveal('.skills-box',{delay: 100})
+srRight.reveal('.skill-card',{interval: 100})
 srRight.reveal('.form-control',{delay: 100})
 
 /* ----- ## -- WORK EXPERIENCE TIMELINE SCROLL ANIMATION -- ## ----- */
@@ -133,6 +137,3 @@ sections.forEach(current =>{
 }
 
 window.addEventListener('scroll', scrollActive)
-  
-   
-
