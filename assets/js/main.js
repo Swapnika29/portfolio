@@ -54,24 +54,31 @@ srLeft.reveal('.contact-info', { delay: 100 });
 const srRight = ScrollReveal({ origin: 'right', distance: '80px', duration: 2000, reset: true });
 srRight.reveal('.form-control', { delay: 100 });
 
-/* ----- TIMELINE SCROLL ANIMATION ----- */
+
+/* ----- TIMELINE SCROLL REVEAL (animated, one-time reveal) ----- */
 document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".timeline-item");
+
     function revealTimelineItems() {
-        let items = document.querySelectorAll(".timeline-item");
-        let triggerHeight = window.innerHeight * 0.9;
+        const triggerPoint = window.innerHeight * 0.85;
 
-        items.forEach((item) => {
-            let itemTop = item.getBoundingClientRect().top;
+        items.forEach((item, index) => {
+            const rect = item.getBoundingClientRect();
 
-            // reveal once and keep visible
-            if (itemTop < triggerHeight) {
-                item.classList.add("show");
+            // Reveal when item enters viewport
+            if (rect.top < triggerPoint && !item.classList.contains("show")) {
+                // small stagger for a smoother interactive feel
+                setTimeout(() => {
+                    item.classList.add("show");
+                }, index * 80);
             }
         });
     }
 
-    window.addEventListener("scroll", revealTimelineItems);
-    revealTimelineItems();
+    window.addEventListener("scroll", revealTimelineItems, { passive: true });
+    window.addEventListener("resize", revealTimelineItems);
+
+    revealTimelineItems(); // initial check for items already visible
 });
 
 /* ----- ACTIVE NAV LINK ON SCROLL ----- */
