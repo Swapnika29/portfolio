@@ -242,36 +242,173 @@
           <div class="top-header">
               <h1>Projects</h1>
           </div>
-          <div class="project-container">
-            <div class="project-box">
-              <a href="https://github.com/Swapnika29/RealTimeBitcoinProcessing" target="_blank">
+
+          <style>
+            .projects-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+              gap: 2rem;
+              margin-top: 2rem;
+            }
+            .project-card {
+              background: var(--bg-color, #fff);
+              border: 1px solid #e0e0e0;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+              transition: transform 0.25s ease, box-shadow 0.25s ease;
+              display: flex;
+              flex-direction: column;
+            }
+            .project-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 10px 28px rgba(0,0,0,0.14);
+            }
+            .project-card a.project-img-link {
+              display: block;
+              overflow: hidden;
+            }
+            .project-card a.project-img-link img {
+              width: 100%;
+              height: 210px;
+              object-fit: cover;
+              display: block;
+              transition: transform 0.35s ease;
+            }
+            .project-card:hover a.project-img-link img {
+              transform: scale(1.04);
+            }
+            .project-card-body {
+              padding: 1.2rem 1.4rem 1.4rem;
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              gap: 0.6rem;
+            }
+            .project-card-body h3 {
+              font-size: 1.05rem;
+              font-weight: 700;
+              margin: 0;
+              color: var(--text-color, #222);
+            }
+            .project-card-body p {
+              font-size: 0.88rem;
+              color: var(--text-color-secondary, #555);
+              line-height: 1.6;
+              margin: 0;
+              flex: 1;
+            }
+            .project-card-body a.github-link {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.4rem;
+              font-size: 0.85rem;
+              font-weight: 600;
+              color: #2563eb;
+              text-decoration: none;
+              margin-top: 0.4rem;
+            }
+            .project-card-body a.github-link:hover {
+              text-decoration: underline;
+            }
+          </style>
+
+          <div class="projects-grid">
+
+            <!-- New Project 1: Sales Inventory Dashboard -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/sales-inventory-dashboard" target="_blank" class="project-img-link">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Sales Inventory Dashboard">
+              </a>
+              <div class="project-card-body">
+                <h3>Sales Inventory Dashboard</h3>
+                <p>Built an end-to-end Retail Sales &amp; Delivery Performance Dashboard using Python, Google BigQuery, SQL, and Power BI on the Olist e-commerce dataset. Designed a layered data pipeline (raw → staging → mart → KPI), modeled business KPIs (Revenue, Orders, AOV, On-time Rate, Avg Delivery Days), and developed a 3-page interactive dashboard to analyze category trends, delivery reliability, and state-level sales performance.</p>
+                <a href="https://github.com/Swapnika29/sales-inventory-dashboard" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
+            </div>
+
+            <!-- New Project 2: Emotion to Art Generator -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/Emotion-To-Art-Generator" target="_blank" class="project-img-link">
+                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80" alt="Emotion to Art Generator">
+              </a>
+              <div class="project-card-body">
+                <h3>Emotion to Art Generator</h3>
+                <p>Developed an end-to-end multimodal deep learning system that maps textual emotions to visual art using Hugging Face Transformers, Diffusers (Stable Diffusion v1.5), and Gradio. The pipeline classifies emotion from text, converts predicted emotion labels into generation prompts, and produces emotion-aligned artwork through a fine-tuned diffusion model, with model evaluation and reproducible notebook-based workflows.</p>
+                <a href="https://github.com/Swapnika29/Emotion-To-Art-Generator" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
+            </div>
+
+            <!-- New Project 3: VLM Evaluation -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/vllm-evaluation" target="_blank" class="project-img-link">
+                <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Evaluating Security and Robustness of Vision-Language Models">
+              </a>
+              <div class="project-card-body">
+                <h3>Evaluating Security &amp; Robustness of Vision-Language Models</h3>
+                <p>Built a Vision-Language Model (VLM) safety and robustness evaluation project to assess GPT-4o and GPT-4o-mini on benchmark tasks involving out-of-distribution (OOD) reasoning, counterfactual questions, and sketch-based visual understanding. Designed notebook-based evaluation workflows with accuracy and semantic similarity analysis, documenting reasoning gaps and safety limitations in complex visual scenarios.</p>
+                <a href="https://github.com/Swapnika29/vllm-evaluation" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
+            </div>
+
+            <!-- Existing Project: Real-time Bitcoin -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/RealTimeBitcoinProcessing" target="_blank" class="project-img-link">
                 <img src="assets/images/realtimebitcoin.png" alt="Real-time Bitcoin Data Processing with Apache Ray">
               </a>
-              <div class="project-name">Real-time Bitcoin Data Processing (Ray)</div>
+              <div class="project-card-body">
+                <h3>Real-time Bitcoin Data Processing (Ray)</h3>
+                <p>End-to-end real-time data processing pipeline for Bitcoin market data using Apache Ray, enabling scalable, distributed computation and live analytics on streaming financial data.</p>
+                <a href="https://github.com/Swapnika29/RealTimeBitcoinProcessing" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
             </div>
-            <div class="project-box">
-                <a href="https://github.com/Swapnika29/Facial-Expression-Recognition" target="_blank">
-                    <img src="assets/images/Project1.png" alt="Project 1">
-                </a>
-                <div class="project-name">Facial Expression Recognition</div>
+
+            <!-- Existing Project: Facial Expression Recognition -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/Facial-Expression-Recognition" target="_blank" class="project-img-link">
+                <img src="assets/images/Project1.png" alt="Facial Expression Recognition">
+              </a>
+              <div class="project-card-body">
+                <h3>Facial Expression Recognition</h3>
+                <p>Deep learning model to recognize and classify facial expressions in real-time, leveraging convolutional neural networks for accurate emotion detection across multiple categories.</p>
+                <a href="https://github.com/Swapnika29/Facial-Expression-Recognition" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
             </div>
-            <div class="project-box">
-                <a href="https://github.com/Swapnika29/CreditCardFraudDetection" target="_blank">
-                    <img src="assets/images/Project2.png" alt="Project 1">
-                </a>
-                <div class="project-name">CreditCard Fraud Detection</div>
+
+            <!-- Existing Project: Credit Card Fraud Detection -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/CreditCardFraudDetection" target="_blank" class="project-img-link">
+                <img src="assets/images/Project2.png" alt="CreditCard Fraud Detection">
+              </a>
+              <div class="project-card-body">
+                <h3>CreditCard Fraud Detection</h3>
+                <p>Machine learning pipeline for detecting fraudulent credit card transactions using imbalanced classification techniques, anomaly detection, and ensemble methods to maximize detection accuracy.</p>
+                <a href="https://github.com/Swapnika29/CreditCardFraudDetection" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
             </div>
-            <div class="project-box">
-                <a href="https://github.com/Swapnika29/Customer-Churn-Prediction" target="_blank">
-                    <img src="assets/images/Project3.png" alt="Project 1">
-                </a>
-                <div class="project-name">Customer Churn Prediction</div>
+
+            <!-- Existing Project: Customer Churn Prediction -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/Customer-Churn-Prediction" target="_blank" class="project-img-link">
+                <img src="assets/images/Project3.png" alt="Customer Churn Prediction">
+              </a>
+              <div class="project-card-body">
+                <h3>Customer Churn Prediction</h3>
+                <p>Predictive modeling system to identify customers likely to churn, using feature engineering, classification algorithms, and business-driven insights to support proactive retention strategies.</p>
+                <a href="https://github.com/Swapnika29/Customer-Churn-Prediction" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
             </div>
-            <div class="project-box">
-                <a href="https://github.com/Swapnika29/FantasyCricketGame" target="_blank">
-                    <img src="assets/images/Project4.png" alt="Project 1">
-                </a>
-                <div class="project-name">Fantasy Cricket Game</div>
+
+            <!-- Existing Project: Fantasy Cricket Game -->
+            <div class="project-card">
+              <a href="https://github.com/Swapnika29/FantasyCricketGame" target="_blank" class="project-img-link">
+                <img src="assets/images/Project4.png" alt="Fantasy Cricket Game">
+              </a>
+              <div class="project-card-body">
+                <h3>Fantasy Cricket Game</h3>
+                <p>Interactive fantasy cricket application where users build virtual teams, track live scores, and compete based on real player performances, combining data-driven predictions with engaging gameplay.</p>
+                <a href="https://github.com/Swapnika29/FantasyCricketGame" target="_blank" class="github-link"><i class="uil uil-github-alt"></i> View on GitHub</a>
+              </div>
             </div>
 
           </div>
@@ -290,7 +427,7 @@
               <div class="contact-info">
                 <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
                 <p><i class="uil uil-envelope"></i> Email:
-                  <a href="mailto:balaswapnika.gopi29@gmail.com">balaswapnika.gopi29@gmail.com</a>
+                  <a href="/cdn-cgi/l/email-protection#0361626f62707462736d6a68622d646c736a313a43646e626a6f2d606c6e"><span class="__cf_email__" data-cfemail="caa8aba6abb9bdabbaa4a3a1abe4ada5baa3f8f38aada7aba3a6e4a9a5a7">[email&#160;protected]</span></a>
                 </p>
                 <p><i class="uil uil-phone"></i> Tel:
                   <a href="tel:+12403507674">+1 240 350 7674</a>
@@ -342,18 +479,4 @@
 
 
     <!-- ----- TYPING JS Link ----- -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-       <!-- ----- SCROLL REVEAL JS Link----- -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- ----- MAIN JS ----- -->
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
-
-
-
-
-
-
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/typed.js
