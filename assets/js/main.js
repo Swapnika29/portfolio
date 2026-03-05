@@ -58,16 +58,18 @@ srRight.reveal('.form-control', { delay: 100 });
 document.addEventListener("DOMContentLoaded", function () {
     function revealTimelineItems() {
         let items = document.querySelectorAll(".timeline-item");
-        let triggerHeight = window.innerHeight * 0.85;
+        let triggerHeight = window.innerHeight * 0.9;
+
         items.forEach((item) => {
             let itemTop = item.getBoundingClientRect().top;
+
+            // reveal once and keep visible
             if (itemTop < triggerHeight) {
                 item.classList.add("show");
-            } else {
-                item.classList.remove("show");
             }
         });
     }
+
     window.addEventListener("scroll", revealTimelineItems);
     revealTimelineItems();
 });
