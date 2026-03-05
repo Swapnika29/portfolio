@@ -163,14 +163,49 @@ nav {
 h3 { font-size: 20px; font-weight: 600; color: var(--text-color-second); margin-bottom: 15px; }
 
 /* ----- ABOUT CONTENT (card) ----- */
+/* ===== ABOUT SECTION: GIF LEFT + TEXT RIGHT ===== */
+.about-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.about-visual{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-anim-img{
+  width: 100%;
+  max-width: 520px;     /* increase/decrease if needed */
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.12));
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.about-visual:hover .about-anim-img{
+  transform: translateY(-6px);
+}
+
+.about-text-content{
+  flex: 1.2;
+  min-width: 0;
+}
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: none;              /* was 800px */
+    margin: 0;                    /* was 0 auto */
     background: var(--color-white);
     border-radius: 20px;
-    padding: 40px 48px;
+    padding: 32px 36px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-    text-align: center;
+    text-align: left;             /* was center */
 }
 .about-content p {
     font-size: 15px;
@@ -441,6 +476,35 @@ footer { display: flex; justify-content: center; align-items: center; flex-direc
     .timeline-img {
         width: 42px;
         height: 42px;
+    }
+    /* ABOUT section (GIF + text) on mobile */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    .about-visual { 
+        width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+
+    .about-anim-img {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    .about-content {
+        width: 100%;
+        margin: 0;
+        padding: 24px 20px;
+        text-align: left;
+    }
+
+    .about-text-content {
+        width: 100%;
+        order: 2;
     }
 }
 
