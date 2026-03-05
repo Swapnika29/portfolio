@@ -34,6 +34,10 @@
                     <div class="circle"></div>
                 </li>
                 <li class="nav_list">
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
                     <a href="#experience" class="nav-link">Work</a>
                     <div class="circle"></div>
                 </li>
@@ -109,84 +113,328 @@
        </section>
        <!-- -------------- ABOUT BOX ---------------- -->
        <section class="section" id="about">
-          <div class="top-header">
-            <h1>About Me</h1>
-          </div>
-          <div class="row">
-            <div class="col">
-                <div class="about-info">
-                    <h3>My Introduction</h3>
-                    <p>I am a passionate Data Scientist with expertise in machine learning, statistical
-                        analysis, and data visualization.I have hands-on experience in AI-driven analytics, 
-                        predictive modeling, and big data technologies. With a background in software engineering,
-                        I enjoy solving complex problems and transforming data into impactful insights.
-                    </p>
-                    <div class="about-btn">
-                      <a class="btn"
-                         href="assets/cv/BalaSwapnika_resume.pdf"
-                         download
-                         target="_blank"
-                         rel="noopener"
-                      >Download CV <i class="uil uil-import"></i></a>
-                    </div>
+         <style>
+           /* ---- About Section ---- */
+           .about-monisha {
+             display: flex;
+             gap: 3rem;
+             align-items: flex-start;
+             flex-wrap: wrap;
+             max-width: 1000px;
+             margin: 0 auto;
+           }
+           .about-monisha .about-left {
+             flex: 0 0 220px;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 1rem;
+           }
+           .about-monisha .about-left img.profile-pic {
+             width: 200px;
+             height: 200px;
+             object-fit: cover;
+             border-radius: 50%;
+             border: 4px solid var(--first-color, #7843e6);
+             box-shadow: 0 6px 24px rgba(120,67,230,0.18);
+           }
+           .about-monisha .about-left .about-social {
+             display: flex;
+             gap: 0.75rem;
+             margin-top: 0.5rem;
+           }
+           .about-monisha .about-right {
+             flex: 1;
+             min-width: 260px;
+           }
+           .about-monisha .about-right h2 {
+             font-size: 1.6rem;
+             margin: 0 0 0.15rem;
+           }
+           .about-monisha .about-right .about-role {
+             color: var(--first-color, #7843e6);
+             font-style: italic;
+             font-size: 1rem;
+             margin: 0 0 1.2rem;
+           }
+           .about-monisha .about-right p {
+             font-size: 0.95rem;
+             line-height: 1.8;
+             margin-bottom: 1rem;
+             color: var(--text-color-second, #555);
+           }
+           .about-monisha .about-right .about-btn { margin-top: 1rem; }
+           @media (max-width: 640px) {
+             .about-monisha { flex-direction: column; align-items: center; text-align: center; }
+             .about-monisha .about-left { flex: none; }
+           }
 
-                </div>
-            </div>
-            <div class="col">
-                <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Frameworks</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span>Pandas</span>
-                        <span>Numpy</span>
-                        <span>Scikit-Learn</span>
-                        <span>TensorFlow</span>
-                        <span>Keras</span>
-                    </div>
-                </div>
-                <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Tools</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span>Git</span>
-                        <span>VS Code</span>
-                        <span>JIRA</span>
-                        <span>Tableau</span>
-                        <span>Microsoft Excel</span>
-                        <span>MySQL</span>
-                    </div>
-                </div>
-                <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Platforms</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span>Jupyter Notebook</span>
-                        <span>Github</span>
-                        <span>Docker</span>
-                        <span>Windows</span>
-                        <span>AWS</span>
-                    </div>
-                </div>
-                <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Programming Languages</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span>Python</span>
-                        <span>C</span>
-                        <span>SQL</span>
-                        <span>R</span>
-                    </div>
-                </div>
-            </div>
-          </div>
+           /* ---- Skills Section ---- */
+           .skills-monisha { max-width: 1000px; margin: 0 auto; }
+           .skills-monisha .skills-category { margin-bottom: 2rem; }
+           .skills-monisha .skills-category h3 {
+             font-size: 1rem;
+             font-weight: 700;
+             margin-bottom: 0.75rem;
+             color: var(--text-color, #222);
+             border-bottom: 2px solid var(--first-color, #7843e6);
+             display: inline-block;
+             padding-bottom: 3px;
+           }
+           .skills-monisha .skill-items {
+             display: flex;
+             flex-wrap: wrap;
+             gap: 0.6rem 1.4rem;
+             align-items: center;
+           }
+           .skills-monisha .skill-item {
+             display: flex;
+             align-items: center;
+             gap: 0.4rem;
+             font-size: 0.88rem;
+             color: var(--text-color, #333);
+           }
+           .skills-monisha .skill-item img {
+             width: 22px;
+             height: 22px;
+             object-fit: contain;
+           }
+           .skills-monisha .skill-tag {
+             font-size: 0.85rem;
+             color: var(--text-color-second, #555);
+           }
+         </style>
+
+         <div class="top-header">
+           <h1>About Me</h1>
+         </div>
+
+         <div class="about-monisha">
+           <div class="about-left">
+             <img src="assets/images/avatar.png" alt="Bala Swapnika Gopi" class="profile-pic">
+             <div class="about-social">
+               <a href="https://www.linkedin.com/in/bala-swapnika-gopi-107815169/" target="_blank">
+                 <i class="uil uil-linkedin-alt" style="font-size:1.8rem;color:var(--first-color,#7843e6)"></i>
+               </a>
+               <a href="https://github.com/Swapnika29" target="_blank">
+                 <i class="uil uil-github-alt" style="font-size:1.8rem;color:var(--first-color,#7843e6)"></i>
+               </a>
+               <a href="mailto:balaswapnika.gopi29@gmail.com">
+                 <i class="uil uil-envelope" style="font-size:1.8rem;color:var(--first-color,#7843e6)"></i>
+               </a>
+             </div>
+           </div>
+           <div class="about-right">
+             <h2>Bala Swapnika Gopi</h2>
+             <p class="about-role">— Data Scientist</p>
+             <p>Hey, I'm Bala Swapnika Gopi!</p>
+             <p>I am a passionate Data Scientist with expertise in machine learning, statistical analysis, and data visualization. I work at the intersection of AI and data engineering, building end-to-end pipelines that transform raw, complex datasets into clear, actionable insights.</p>
+             <p>My background spans predictive modeling, deep learning, big data technologies, and GenAI. With a foundation in software engineering, I enjoy solving complex real-world problems — from real-time fraud detection to multimodal AI systems.</p>
+             <p>I am especially drawn to roles where strong analytical thinking and machine learning directly shape product decisions and business outcomes.</p>
+             <p>Feel free to explore my work or reach out if you would like to connect or collaborate.</p>
+             <div class="about-btn">
+               <a class="btn" href="assets/cv/BalaSwapnika_resume.pdf" download target="_blank" rel="noopener">
+                 Download Resume <i class="uil uil-import"></i>
+               </a>
+             </div>
+           </div>
+         </div>
+       </section>
+
+       <!-- -------------- SKILLS BOX ---------------- -->
+       <section class="section" id="skills">
+         <div class="top-header">
+           <h1>Skills</h1>
+         </div>
+
+         <div class="skills-monisha">
+
+           <!-- Languages & Tools -->
+           <div class="skills-category">
+             <h3>Languages &amp; Tools</h3>
+             <div class="skill-items">
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">R</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">SQL</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">Git</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">Docker</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">VS Code</span>
+             </div>
+           </div>
+
+           <!-- Statistics -->
+           <div class="skills-category">
+             <h3>Statistics</h3>
+             <div class="skill-items">
+               <span class="skill-tag">A/B Testing</span>
+               <span class="skill-tag">Hypothesis Testing</span>
+               <span class="skill-tag">ANOVA</span>
+               <span class="skill-tag">Chi-Square</span>
+               <span class="skill-tag">Causal Inference</span>
+               <span class="skill-tag">Statistical Modeling</span>
+             </div>
+           </div>
+
+           <!-- Frameworks & Platforms -->
+           <div class="skills-category">
+             <h3>Frameworks &amp; Platforms</h3>
+             <div class="skill-items">
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apacheairflow/apacheairflow-original.svg" alt="Airflow">Airflow</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">AWS</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">GCP</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">Flask</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">Jupyter</span>
+               <span class="skill-tag">Apache Spark</span>
+               <span class="skill-tag">Kafka</span>
+               <span class="skill-tag">Streamlit</span>
+             </div>
+           </div>
+
+           <!-- Libraries -->
+           <div class="skills-category">
+             <h3>Libraries</h3>
+             <div class="skill-items">
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">Scikit-learn</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">PyTorch</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">Keras</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">NumPy</span>
+               <span class="skill-tag">HuggingFace</span>
+               <span class="skill-tag">spaCy</span>
+               <span class="skill-tag">NLTK</span>
+             </div>
+           </div>
+
+           <!-- ML & Modeling -->
+           <div class="skills-category">
+             <h3>ML &amp; Modeling</h3>
+             <div class="skill-items">
+               <span class="skill-tag">Linear Regression</span>
+               <span class="skill-tag">Logistic Regression</span>
+               <span class="skill-tag">Decision Trees</span>
+               <span class="skill-tag">Random Forest</span>
+               <span class="skill-tag">AdaBoost</span>
+               <span class="skill-tag">Gradient Boosting</span>
+               <span class="skill-tag">K-Means</span>
+               <span class="skill-tag">PCA</span>
+               <span class="skill-tag">SVM</span>
+               <span class="skill-tag">CNN</span>
+               <span class="skill-tag">LSTM</span>
+               <span class="skill-tag">Time Series Forecasting</span>
+               <span class="skill-tag">BERT</span>
+               <span class="skill-tag">EDA</span>
+               <span class="skill-tag">ETL Pipelines</span>
+             </div>
+           </div>
+
+           <!-- Visualization & BI -->
+           <div class="skills-category">
+             <h3>Visualization &amp; BI</h3>
+             <div class="skill-items">
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Power BI">Power BI</span>
+               <span class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">Matplotlib</span>
+               <span class="skill-tag">Tableau</span>
+               <span class="skill-tag">Seaborn</span>
+               <span class="skill-tag">Plotly</span>
+             </div>
+           </div>
+
+           <!-- GenAI -->
+           <div class="skills-category">
+             <h3>GenAI</h3>
+             <div class="skill-items">
+               <span class="skill-tag">LangChain</span>
+               <span class="skill-tag">OpenAI API</span>
+               <span class="skill-tag">Stable Diffusion</span>
+               <span class="skill-tag">Prompt Engineering</span>
+               <span class="skill-tag">Vector Databases</span>
+               <span class="skill-tag">RAG Pipelines</span>
+               <span class="skill-tag">LLMs (BERT, GPT)</span>
+               <span class="skill-tag">Gradio</span>
+             </div>
+           </div>
+
+         </div>
        </section>
 
        <!-- -------------- EXPERIENCE BOX ---------------- -->
        <section class="timeline" id="experience">
+            <style>
+              .timeline { padding: 40px 20px; }
+              .section-title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; }
+              .timeline-container {
+                position: relative;
+                max-width: 900px;
+                margin: 0 auto;
+              }
+              .timeline-container::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 3px;
+                height: 100%;
+                background: var(--first-color, #7843e6);
+                top: 0;
+              }
+              .timeline-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                width: 45%;
+                margin-bottom: 40px;
+                position: relative;
+              }
+              .timeline-item.left {
+                margin-right: auto;
+                flex-direction: row-reverse;
+                text-align: right;
+              }
+              .timeline-item.right {
+                margin-left: auto;
+                flex-direction: row;
+                text-align: left;
+              }
+              .timeline-item::after {
+                content: '';
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                background: var(--first-color, #7843e6);
+                border-radius: 50%;
+                top: 10px;
+              }
+              .timeline-item.left::after { right: -9%; }
+              .timeline-item.right::after { left: -9%; }
+              .timeline-img {
+                width: 52px;
+                height: 52px;
+                object-fit: contain;
+                border-radius: 8px;
+                flex-shrink: 0;
+                background: #f5f5f5;
+                padding: 4px;
+                border: 1px solid #e0e0e0;
+              }
+              .timeline-content h3 { margin: 0 0 4px; font-size: 1rem; font-weight: 700; }
+              .timeline-content h4 { margin: 0 0 4px; font-size: 0.9rem; color: var(--first-color, #7843e6); font-weight: 600; }
+              .timeline-content .date { font-size: 0.8rem; color: #888; display: block; margin-bottom: 6px; }
+              .timeline-content p { font-size: 0.875rem; margin: 0; line-height: 1.5; color: #555; }
+              @media (max-width: 680px) {
+                .timeline-container::before { left: 20px; }
+                .timeline-item, .timeline-item.left, .timeline-item.right {
+                  width: 85%;
+                  margin-left: 50px;
+                  flex-direction: row;
+                  text-align: left;
+                }
+                .timeline-item::after, .timeline-item.left::after, .timeline-item.right::after {
+                  left: -38px;
+                  right: auto;
+                }
+              }
+            </style>
 
             <h2 class="section-title">What I have done so far</h2>
             <div class="timeline-container">
@@ -427,7 +675,7 @@
               <div class="contact-info">
                 <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
                 <p><i class="uil uil-envelope"></i> Email:
-                  <a href="/cdn-cgi/l/email-protection#0361626f62707462736d6a68622d646c736a313a43646e626a6f2d606c6e"><span class="__cf_email__" data-cfemail="caa8aba6abb9bdabbaa4a3a1abe4ada5baa3f8f38aada7aba3a6e4a9a5a7">[email&#160;protected]</span></a>
+                  <a href="mailto:balaswapnika.gopi29@gmail.com">balaswapnika.gopi29@gmail.com</a>
                 </p>
                 <p><i class="uil uil-phone"></i> Tel:
                   <a href="tel:+12403507674">+1 240 350 7674</a>
@@ -479,4 +727,12 @@
 
 
     <!-- ----- TYPING JS Link ----- -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/typed.js
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
